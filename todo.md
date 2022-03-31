@@ -1,6 +1,6 @@
 Krav
 
-* Gör en installation av Symfony och placera den i me/report. Den publika webbkatalogen skall ligga som me/report/public.
+[OK] Gör en installation av Symfony och placera den i me/report. Den publika webbkatalogen skall ligga som me/report/public.
 
 * Skapa följande webbsidor, använd templatefiler och en templatemotor.
     * Skapa en route / som ger en presentation av dig själv inklusive en bild. Det är okey att vara anonym och hitta på en figur att presentera.
@@ -14,7 +14,7 @@ Krav
     * En navbar som gör att man kan navigera mellan samtliga sidor.
     * En footer längst ned som visar rimliga detaljer.
 
-* Skapa ett Git repo av katalogen me/report. Koppla samman repot med GitHub, GitLab eller liknande tjänst.
+[OK] Skapa ett Git repo av katalogen me/report. Koppla samman repot med GitHub, GitLab eller liknande tjänst.
 
 * Committa alla filer och lägg till en tagg 1.0.0. Om du gör uppdateringar så ökar du taggen till 1.0.1, 1.0.2, 1.1.0 eller liknande.
 
