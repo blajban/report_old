@@ -2,10 +2,15 @@ Krav
 
 [OK] Gör en installation av Symfony och placera den i me/report. Den publika webbkatalogen skall ligga som me/report/public.
 
-* Skapa följande webbsidor, använd templatefiler och en templatemotor.
-    * Skapa en route / som ger en presentation av dig själv inklusive en bild. Det är okey att vara anonym och hitta på en figur att presentera.
-    * Skapa en route /about som berättar om kursen mvc och dess syfte. Länka till kursens Git-repo. Lägg till en representativ bild.
-    * Skapa en route /report där du samlar dina redovisningstexter för kursens kmom.
+[OK] Skapa följande webbsidor, använd templatefiler och en templatemotor.
+    [OK] Skapa en route / 
+        [OK] som ger en presentation av dig själv inklusive en bild. Det är okey att vara anonym och hitta på en figur att presentera.
+    [OK] Skapa en route /about 
+        [OK] som berättar om kursen mvc och dess syfte. Länka till kursens Git-repo. Lägg till en representativ bild.
+    [OK] Skapa en route /report där du 
+        [OK] samlar dina redovisningstexter för kursens kmom.
+
+[OK] Markdown-support: https://github.com/erusev/parsedown
 
 * Skapa en enhetlig style till webbplatsen. Du kan använda LESS/SASS eller liknande CSS preprocessorer. Du kan använda CSS ramverk.
 

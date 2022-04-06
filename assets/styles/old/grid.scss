@@ -1,0 +1,212 @@
+// Base row
+.row {
+    display: grid;
+    min-height: $block-min-height-desktop;
+    
+    grid-template-columns: repeat(12, minmax(10px, 1fr));
+    grid-gap: 2em;
+}
+
+// 2 col content
+.col2 {
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+    ' . heading heading heading . . . . . . . . '
+    '. . left left left left right right right right . .';
+
+    background-color: $background-alternative-color;
+    
+    .heading {
+        grid-area: heading;
+        background-color: $background-color;
+        padding-top: 2em;
+        padding-left: 1em;
+    }
+    
+    .left {
+        grid-area: left;
+        padding-top: 5em;
+    }
+
+    .right {
+        grid-area: right;
+        padding-top: 5em;
+    }
+}
+
+// Image full width
+/*.image {
+    background-color: $background-color-light;
+    min-height: $block-min-height-desktop;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+        flex-shrink: 0;
+        min-width: 100%;
+        max-height: $block-min-height-desktop;
+        object-fit: cover;
+    }
+}
+
+// 3 col content
+.col3bullets {
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+    ' . heading heading heading . . . . . . . . '
+    '. . left left . middle middle . right right . .';
+
+    background-color: $background-color;
+    
+    .heading {
+        grid-area: heading;
+        padding-top: 2em;
+        padding-left: 1em;
+    }
+    
+    .left {
+        grid-area: left;
+        padding-top: 3em;
+    }
+
+    .middle {
+        grid-area: middle;
+        padding-top: 3em;
+    }
+
+    .right {
+        grid-area: right;
+        padding-top: 3em;
+    }
+
+    h2 {
+        color: $accent-color;
+    }
+
+    h3,
+    li {
+        color: $font-alternative-color;
+    }
+}
+
+// Gallery
+.gallery {
+    grid-template-rows: 100px 100px 200px 1fr;
+    grid-template-areas: 
+    ' . heading heading heading . . . . . . . . '
+    ' . . . . . . . . . . . . '
+    ' . . left left left middle middle middle right right right  . '
+    ' . . . . . . . . . . . . ';
+
+
+    background-color: $background-alternative-color;
+
+    .heading {
+        grid-area: heading;
+        padding-top: 2em;
+        background-color: $background-color;
+        padding-left: 1em;
+    }
+    
+    .left {
+        grid-area: left;
+        box-shadow: 3px 3px 5px rgba(32, 32, 32, 0.5);
+    }
+
+    .middle {
+        grid-area: middle;
+        box-shadow: 3px 3px 5px rgba(32, 32, 32, 0.5);
+    }
+
+    .right {
+        grid-area: right;
+        box-shadow: 3px 3px 5px rgba(32, 32, 32, 0.5);
+    }
+
+    .box-image img {
+        max-height: 200px;
+        
+    }
+
+}
+
+
+@media (max-width: 979px) {
+    .col3bullets {
+        grid-template-areas: 
+        ' . heading heading heading heading . . . . . . . '
+        ' . left left left left left middle middle middle middle middle .'
+        ' . right right right right right . . . . . . ';
+    }
+    
+    .col2 {
+        grid-template-areas: 
+        ' . heading heading heading heading . . . . . . . '
+        '. left left left left left left left left left left .'
+        '. right right right right right right right right right right .';
+    }
+
+    .gallery {
+        grid-template-rows: 100px 1fr 1fr 100px;
+        grid-template-areas: 
+        ' . heading heading heading heading . . . . . . . '
+        ' . left left left left left middle middle middle middle middle .'
+        ' . right right right right right . . . . . . '
+        ' . . . . . . . . . . . . ';
+
+    }
+}
+
+@media (max-width: 560px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+    
+    .col3bullets,
+    .gallery {
+        grid-template-areas: 
+        ' heading '
+        ' left '
+        ' middle '
+        ' right '
+        ' . ';
+    }
+
+    .gallery {
+        grid-template-rows: 100px 200px 200px 200px 1fr;
+        
+        .heading {
+            padding-left: 0;
+        }
+    }
+
+    .col2 {
+        grid-template-rows: 100px 1fr 1fr;
+        grid-template-areas: 
+        ' heading '
+        ' left '
+        ' right ';
+    }
+
+    .col2,
+    .col3bullets {
+        .left,
+        .middle,
+        .right {
+            padding-top: 0;
+        }
+
+        .heading {
+            padding-left: 0;
+        }
+    }
+    
+}
