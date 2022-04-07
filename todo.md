@@ -12,12 +12,12 @@ Krav
 
 [OK] Markdown-support: https://github.com/erusev/parsedown
 
-* Skapa en enhetlig style till webbplatsen. Du kan använda LESS/SASS eller liknande CSS preprocessorer. Du kan använda CSS ramverk.
+[OK] Skapa en enhetlig style till webbplatsen. Du kan använda LESS/SASS eller liknande CSS preprocessorer. Du kan använda CSS ramverk.
 
 * Sidorna skall ha en enhetlig layout och det skall finns:
-    * En tydlig header överst på varje sida, med eller utan bild.
-    * En navbar som gör att man kan navigera mellan samtliga sidor.
-    * En footer längst ned som visar rimliga detaljer.
+    [OK] En tydlig header överst på varje sida, med eller utan bild.
+    [OK] En navbar som gör att man kan navigera mellan samtliga sidor.?
+    [OK] En footer längst ned som visar rimliga detaljer.
 
 [OK] Skapa ett Git repo av katalogen me/report. Koppla samman repot med GitHub, GitLab eller liknande tjänst.
 

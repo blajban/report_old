@@ -1,6 +1,10 @@
 .header {
     // rgb(65, 61, 61)
     background-color: $color-header-bar;
+    position:fixed;
+    top:0;
+    z-index:100;
+    width: 100%;
 }
 
 .header-content {
