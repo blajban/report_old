@@ -7,7 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Parsedown;
 
-function parseMarkdown($fileName): string {
+function parseMarkdown($fileName): string
+{
     $parseDown = new Parsedown();
     $content = file_get_contents('../assets/content/' . $fileName);
     return $parseDown->text($content);
@@ -51,4 +52,3 @@ class ReportController extends AbstractController
         ]);
     }
 }
-
