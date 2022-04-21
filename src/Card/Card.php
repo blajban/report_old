@@ -57,36 +57,3 @@ class Card
         return $this->value;
     }
 }
-
-class HeartsCard extends Card
-{
-    public function __construct(int $value)
-    {
-        parent::__construct($value, "Hjärter");
-    }
-}
-
-class TilesCard extends Card
-{
-    public function __construct(int $value)
-    {
-        parent::__construct($value, "Ruter");
-    }
-}
-
-class ClubsCard extends Card
-{
-    public function __construct(int $value)
-    {
-        parent::__construct($value, "Klöver");
-    }
-}
-
-class SpadesCard extends Card
-{
-    public function __construct(int $value)
-    {
-        parent::__construct($value, "Spader");
-    }
-}
-

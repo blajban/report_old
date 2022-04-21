@@ -19,11 +19,17 @@ class CardController extends AbstractController
 
         $deck = new Deck();
 
+        $printedDeck = "";
 
-        return $this->render('report.html.twig', [
+        foreach ($deck->getDeck() as $card) {
+            $printedDeck = $printedDeck . $card->asString() . "\n";
+        }
+
+
+        return $this->render('card.html.twig', [
             'title' => "Card",
             'heading' => "En lek",
-            'content' => var_dump($deck->remainingCards())
+            'content' => $printedDeck
         ]);
     }
 

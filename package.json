@@ -20,6 +20,7 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress",
         "php-server": "php -S localhost:8888 -t public",
+        "copy-stylesheet-dev": "cp public/build/app.css public/css/style.css",
         "copy-stylesheet-build": "cp public/build/app.ba8ccad8.css public/css/style.css"
     }
 }
