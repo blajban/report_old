@@ -10,8 +10,11 @@ Börja med att utveckla dina klasser och testa dem i webbsidor enligt följande.
 * Skapa klasser för att hantera 
     * kort (card) 
     * och kortlek (deck). 
+
+***** TODO *******
+FIXA SESSION OCH ORDNA ROUTESEN
     
-* Skapa en sida card/deck som visar samtliga kort i kortleken sorterade per färg och värde. Ess kan vara antingen 1 eller 14 beroende av vilket kortspel man spelar.
+[OK] Skapa en sida card/deck som visar samtliga kort i kortleken sorterade per färg och värde. Ess kan vara antingen 1 eller 14 beroende av vilket kortspel man spelar.
 
 * Skapa en sida card/deck/shuffle som visar samtliga kort i kortleken när den har blandats.
 

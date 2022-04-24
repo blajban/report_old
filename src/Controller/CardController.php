@@ -19,17 +19,37 @@ class CardController extends AbstractController
 
         $deck = new Deck();
 
-        $printedDeck = "";
+        return $this->render('card.html.twig', [
+            'title' => "Card",
+            'deck' => $deck->getDeck()
+        ]);
+    }
 
-        foreach ($deck->getDeck() as $card) {
-            $printedDeck = $printedDeck . $card->asString() . "\n";
-        }
-
+    /**
+     * @Route("/card/deck")
+     */
+    public function deck(): Response
+    {
+        $deck = new Deck();
 
         return $this->render('card.html.twig', [
             'title' => "Card",
-            'heading' => "En lek",
-            'content' => $printedDeck
+            'deck' => $deck->getDeck()
+        ]);
+    }
+
+    /**
+     * @Route("/card/deck/shuffle")
+     */
+    public function shuffled(): Response
+    {
+        $deck = new Deck();
+
+        $deck->shuffleDeck();
+
+        return $this->render('card.html.twig', [
+            'title' => "Card",
+            'deck' => $deck->getDeck()
         ]);
     }
 

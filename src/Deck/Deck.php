@@ -4,6 +4,10 @@ namespace App\Deck;
 
 use App\Card\Card;
 
+use const App\Card\HEARTS;
+use const App\Card\TILES;
+use const App\Card\SPADES;
+use const App\Card\CLUBS;
 
 class Deck
 {
@@ -12,13 +16,11 @@ class Deck
     public function __construct()
     {
         for ($i = 1; $i < 14; $i++) {
-            $this->deck[] = new Card($i, "Hjärter");
-            $this->deck[] = new Card($i, "Ruter");
-            $this->deck[] = new Card($i, "Spader");
-            $this->deck[] = new Card($i, "Klöver");
+            $this->deck[] = new Card($i, HEARTS);
+            $this->deck[] = new Card($i, TILES);
+            $this->deck[] = new Card($i, SPADES);
+            $this->deck[] = new Card($i, CLUBS);
         }
-
-        $this->shuffleDeck();
     }
 
     public function getDeck(): array
@@ -26,10 +28,9 @@ class Deck
         return $this->deck;
     }
 
-    public function getSortedDeck(): array
+    public function sortDeck()
     {
         // TODO
-        return [];
     }
 
     public function remainingCards(): int
@@ -37,10 +38,11 @@ class Deck
         return count($this->deck);
     }
 
-    public function drawCards(int $numberToDraw): array
+    public function drawCard(): Card
     {
-        // TODO
-        return [];
+        $cardToDraw = $this->peek();
+        array_pop($this->deck);
+        return $cardToDraw;
     }
 
     public function peek(): Card

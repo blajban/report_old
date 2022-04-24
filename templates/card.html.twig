@@ -6,16 +6,13 @@
 <body>
     {% include 'incl/nav.html.twig' %}
 
-    <div class="hero-area">
-        <div class="playing-area">
-            <div class="card spades value7">
-            </div>
-        </div>
-    </div>
-
     <div class="content-area">
-        <div class="content">
-            {{ content|raw }}
+        <div class="card-area">
+
+            {% for card in deck %}
+                <div class="card {{ card.getCssColor() }} value{{ card.getValue() }}">
+                </div>
+            {% endfor %}
         </div>
     </div>
 
