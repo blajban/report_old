@@ -5,7 +5,7 @@ Börja med att utveckla dina klasser och testa dem i webbsidor enligt följande.
 
 [OK] Skapa en kontroller i Symfony där du kan skapa webbsidor för denna delen av uppgiften.
 
-* Gör en förstasida card som länkar till samtliga undersidor för denna uppgiften. Detta är din “landningssida” för denna uppgiften. Placera länken till sidan i din navbar så den är lätt att nå.
+[OK] Gör en förstasida card som länkar till samtliga undersidor för denna uppgiften. Detta är din “landningssida” för denna uppgiften. Placera länken till sidan i din navbar så den är lätt att nå.
 
 * Skapa klasser för att hantera 
     * kort (card) 
@@ -16,9 +16,9 @@ FIXA SESSION OCH ORDNA ROUTESEN
     
 [OK] Skapa en sida card/deck som visar samtliga kort i kortleken sorterade per färg och värde. Ess kan vara antingen 1 eller 14 beroende av vilket kortspel man spelar.
 
-* Skapa en sida card/deck/shuffle som visar samtliga kort i kortleken när den har blandats.
+[OK] Skapa en sida card/deck/shuffle som visar samtliga kort i kortleken när den har blandats.
 
-* Skapa en sida card/deck/draw som drar ett kort från kortleken och visar upp det. Visa även antalet kort som är kvar i kortleken.
+[OK] Skapa en sida card/deck/draw som drar ett kort från kortleken och visar upp det. Visa även antalet kort som är kvar i kortleken.
 
 * Skapa en sida card/deck/draw/:number som drar :number kort från kortleken och visar upp dem. Visa även antalet kort som är kvar i kortleken.
 
@@ -31,7 +31,7 @@ FIXA SESSION OCH ORDNA ROUTESEN
 Optionellt krav.
 ----------------------
 
-* Fundera på om du kan använda konstruktionen “interface” för att bygga din kod förberedd för återanvändning. Tänk att din kod jobbar mot ett interface DeckInterface istället för en hård implementation av Deck alternativt DeckWith2Jokers. Se om du kan uppdatera din kod och dina sidor så applikationen blir mer flexibel för implementationen av själva kortleken. Spelaren, korthanden, och utdelningen av korten samt blandningen bör ju inte behöva bry sig om vilka kort som ligger i kortleken.
+[OK] Fundera på om du kan använda konstruktionen “interface” för att bygga din kod förberedd för återanvändning. Tänk att din kod jobbar mot ett interface DeckInterface istället för en hård implementation av Deck alternativt DeckWith2Jokers. Se om du kan uppdatera din kod och dina sidor så applikationen blir mer flexibel för implementationen av själva kortleken. Spelaren, korthanden, och utdelningen av korten samt blandningen bör ju inte behöva bry sig om vilka kort som ligger i kortleken.
 
 Bygg JSON API
 ---------------

@@ -4,22 +4,30 @@ namespace App\Deck;
 
 use App\Card\Card;
 
-use const App\Card\HEARTS;
-use const App\Card\TILES;
-use const App\Card\SPADES;
-use const App\Card\CLUBS;
+interface DeckInterface
+{
+    public function __construct();
+    public function getDeck(): array;
+    public function sortDeck();
+    public function resetDeck();
+    public function isEmpty(): bool;
+    public function remainingCards(): int;
+    public function drawCard(): Card;
+    public function peek(): Card;
+    public function shuffleDeck();
+}
 
-class Deck
+class Deck implements DeckInterface
 {
     private $deck = [];
 
     public function __construct()
     {
         for ($i = 1; $i < 14; $i++) {
-            $this->deck[] = new Card($i, HEARTS);
-            $this->deck[] = new Card($i, TILES);
-            $this->deck[] = new Card($i, SPADES);
-            $this->deck[] = new Card($i, CLUBS);
+            $this->deck[] = new Card($i, Card::HEARTS);
+            $this->deck[] = new Card($i, Card::TILES);
+            $this->deck[] = new Card($i, Card::SPADES);
+            $this->deck[] = new Card($i, Card::CLUBS);
         }
     }
 
@@ -31,6 +39,20 @@ class Deck
     public function sortDeck()
     {
         // TODO
+    }
+
+    public function resetDeck()
+    {
+        // TODO
+    }
+
+    public function isEmpty(): bool
+    {
+        if ($this->remainingCards() > 0) {
+            return false;
+        }
+
+        return true;
     }
 
     public function remainingCards(): int

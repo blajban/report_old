@@ -26,6 +26,11 @@
     font-size: $card-font-size;
 }
 
+.back {
+    background: $cardback-background;
+    color: $font-color-white;
+}
+
 .spades {
     color: $card-color-black;
 

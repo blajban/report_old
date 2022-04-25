@@ -2,14 +2,15 @@
 
 namespace App\Card;
 
-const HEARTS = 1;
-const SPADES = 2;
-const CLUBS = 3;
-const TILES = 4;
 
-class Card
+interface FrenchEnglishCardInterface
 {
-    private $cardNames = [
+    const HEARTS = 1;
+    const SPADES = 2;
+    const CLUBS = 3;
+    const TILES = 4;
+
+    const CARDNAMES = [
         1 => 'Ess',
         2 => 'Två',
         3 => 'Tre',
@@ -25,18 +26,30 @@ class Card
         13 => 'Kung',
         14 => 'Ess'
     ];
-    private $colorNames = [
+    const COLORNAMES = [
         1 => "Hjärter",
         2 => "Spader",
         3 => "Klöver",
         4 => "Ruter"
     ];
-    private $cssColors = [
+    const CSSCOLORS = [
         1 => "hearts",
         2 => "spades",
         3 => "clubs",
         4 => "tiles"
     ];
+
+    public function __construct(int $value, int $colorEnum);
+    public function asString(): string;
+    public function isAce(): bool;
+    public function changeAceValue();
+    public function getValue(): int;
+    public function getCssColor(): string;
+}
+
+
+class Card implements FrenchEnglishCardInterface
+{
     private $value;
     private $color;
 
@@ -48,7 +61,7 @@ class Card
 
     public function asString(): string
     {
-        return "{$this->colorNames[$this->color]} {$this->cardNames[$this->value]} ({$this->value} poäng)";
+        return "{Card::COLORNAMES[$this->color]} {Card::CARDNAMES[$this->value]} ({$this->value} poäng)";
     }
 
     public function isAce(): bool
@@ -75,6 +88,6 @@ class Card
     }
 
     public function getCssColor(): string {
-        return $this->cssColors[$this->color];
+        return Card::CSSCOLORS[$this->color];
     }
 }
