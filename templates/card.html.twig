@@ -11,6 +11,8 @@
         <a href="{{ relative_path('/card/deck') }}">deck</a>
         <a href="{{ relative_path('/card/deck/shuffle') }}">shuffled</a>
         <a href="{{ relative_path('/card/deck/draw') }}">draw</a>
+        <a href="{{ relative_path('/card/deck/draw/5') }}">draw 5</a>
+        <a href="{{ relative_path('/card/deck/draw/10') }}">draw 10</a>
     </nav>
 
     <div class="content-area">
@@ -25,7 +27,6 @@
                     </div>
                 {% endfor %}
             {% endif %}
-            </div>
 
             {% if drawn_card is defined %}
                 <div class="card back">{{ remaining_cards }}</div>
@@ -35,9 +36,22 @@
 
             {% if drawn_cards is defined %}
                 <div class="card back">{{ remaining_cards }}</div>
-                <div class="card {{ drawn_cards[0].getCssColor() }} value{{ drawn_cards[0].getValue() }}">
-                </div>
+                {% for card in drawn_cards %}
+                    <div class="card {{ card.getCssColor() }} value{{ card.getValue() }}">
+                    </div>
+                {% endfor %}
+                
             {% endif %}
+
+            {% if dealt_cards is defined %}
+                <div class="card back">{{ remaining_cards }}</div>
+
+                
+            {% endif %}
+
+            
+
+            </div>
 
         </div>
     </div>

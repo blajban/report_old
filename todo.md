@@ -20,11 +20,14 @@ FIXA SESSION OCH ORDNA ROUTESEN
 
 [OK] Skapa en sida card/deck/draw som drar ett kort från kortleken och visar upp det. Visa även antalet kort som är kvar i kortleken.
 
-* Skapa en sida card/deck/draw/:number som drar :number kort från kortleken och visar upp dem. Visa även antalet kort som är kvar i kortleken.
+[OK] Skapa en sida card/deck/draw/:number som drar :number kort från kortleken och visar upp dem. Visa även antalet kort som är kvar i kortleken.
 
-* Kortleken skall sparas i sessionen så om man anropar sidorna draw och draw/:number så skall hela tiden antalet kort från korleken minskas tills kortleken är slut. När man gör card/deck/shuffle så kan kortleken återställas.
+[OK] Kortleken skall sparas i sessionen så om man anropar sidorna draw och draw/:number så skall hela tiden antalet kort från korleken minskas tills kortleken är slut. När man gör card/deck/shuffle så kan kortleken återställas.
 
 * Skapa en sida card/deck/deal/:players/:cards som delar ut ett antal :cards från kortleken till ett antal :players och visar upp de korten som respektive spelare har fått. Visa även antalet kort som är kvar i kortleken. Här kan det vara bra att skapa klasser för player och cardHand eller liknande.
+    * CSS-regel för player1, player 2 etc
+    * Jobba vidare med cardhand och player
+
 
 * Skapa en sida card/deck2 som är en kortlek inklusive 2 jokrar. Visa kortleken på samma sätt som sidan card/deck. Här kan det troligen vara lämpligt med någon form av arv när du bygger koden. Försök återanvända Deck och bygg förslagsvis DeckWith2Jokers extends Deck.
 

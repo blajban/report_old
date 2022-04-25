@@ -3,10 +3,10 @@
 namespace App\Controller;
 
 use App\Deck\Deck;
+use App\CardHand\CardHand;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 
@@ -79,19 +79,18 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/card/deck/draw/:number")
+     * @Route("/card/deck/draw/{number}")
      */
-    public function drawMany(Request $request, SessionInterface $session): Response
+    public function drawMany($number, SessionInterface $session): Response
     {
         $deck = $session->get("deck") ?? new Deck();
 
-        $cardsToDraw = $request->request->get('number');
         $cardsDrawn = [];
 
-        if ($deck->isEmpty()) {
+        if ($deck->remainingCards() < $number) {
             $cardsDrawn = $session->get("cards_drawn");
         } else {
-            for ($i = 0; $i < $cardsToDraw; $i++) {
+            for ($i = 0; $i < $number; $i++) {
                 $cardsDrawn[] = $deck->drawCard();
             }
             $session->set("cards_drawn", $cardsDrawn);
@@ -103,6 +102,44 @@ class CardController extends AbstractController
             'title' => "Card",
             'deck' => $deck->getDeck(),
             'drawn_cards' => $cardsDrawn,
+            'remaining_cards' => $deck->remainingCards()
+        ]);
+    }
+
+    /**
+     * @Route("/card/deck/deal/{players}/{cards}")
+     */
+    public function dealCards($players, $cards, SessionInterface $session): Response
+    {
+        $deck = $session->get("deck") ?? new Deck();
+
+        $cardHand = new CardHand();
+
+        if ($deck->remainingCards() < $cards * $players ) {
+            $dealtCards = [];
+        } else {
+            $dealtCards = [];
+
+            for ($i = 0; $i < $cards; $i++) {
+                $cardHand->addCards($deck->drawCard());
+                $dealtCards[] = $deck->drawCard();
+            }
+            
+            
+
+
+        }
+
+
+        
+        
+        
+        $session->set("deck", $deck);
+
+        return $this->render('card.html.twig', [
+            'title' => "Card",
+            'deck' => $deck->getDeck(),
+            'dealt_cards' => $dealtCards,
             'remaining_cards' => $deck->remainingCards()
         ]);
     }
