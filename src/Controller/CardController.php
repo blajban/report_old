@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use App\Deck\Deck;
-use App\CardHand\CardHand;
+use App\CardGame\Deck\Deck;
+use App\CardGame\DeckWithJokers\DeckWithJokers;
+use App\CardGame\Player\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -112,35 +113,39 @@ class CardController extends AbstractController
     public function dealCards($players, $cards, SessionInterface $session): Response
     {
         $deck = $session->get("deck") ?? new Deck();
+        $activePlayers = [];
 
-        $cardHand = new CardHand();
-
-        if ($deck->remainingCards() < $cards * $players ) {
-            $dealtCards = [];
-        } else {
-            $dealtCards = [];
-
-            for ($i = 0; $i < $cards; $i++) {
-                $cardHand->addCards($deck->drawCard());
-                $dealtCards[] = $deck->drawCard();
-            }
-            
-            
-
-
+        for ($i = 1; $i <= $players; $i++) {
+            $activePlayers[] = new Player("Player $i");
         }
 
+        if ($deck->remainingCards() > $players * $cards) {
+            for ($i = 0; $i < $cards; $i++) {
+                foreach ($activePlayers as $pl) {
+                    $pl->addCard($deck->drawCard());
+                }
+            }
+        }
 
-        
-        
-        
         $session->set("deck", $deck);
+
+        return $this->render('table.html.twig', [
+            'title' => "Card",
+            'remaining_cards' => $deck->remainingCards(),
+            'players' => $activePlayers
+        ]);
+    }
+
+    /**
+     * @Route("/card/deck2")
+     */
+    public function deck2(): Response
+    {
+        $deck = new DeckWithJokers(2);
 
         return $this->render('card.html.twig', [
             'title' => "Card",
-            'deck' => $deck->getDeck(),
-            'dealt_cards' => $dealtCards,
-            'remaining_cards' => $deck->remainingCards()
+            'displayed_deck' => $deck->getDeck()
         ]);
     }
 

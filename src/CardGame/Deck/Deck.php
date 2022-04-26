@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Deck;
+namespace App\CardGame\Deck;
 
-use App\Card\Card;
+use App\CardGame\Card\Card;
 
 interface DeckInterface
 {
@@ -19,7 +19,7 @@ interface DeckInterface
 
 class Deck implements DeckInterface
 {
-    private $deck = [];
+    protected $deck = [];
 
     public function __construct()
     {
@@ -77,4 +77,3 @@ class Deck implements DeckInterface
         shuffle($this->deck);
     }
 }
-

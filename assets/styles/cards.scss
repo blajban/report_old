@@ -11,6 +11,13 @@
     flex-wrap: wrap;
 }
 
+.player-area {
+    background-color: $color-footer;
+    width: $content-max-width;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .card {
     width: $card-width;
     height: $card-height;
@@ -62,6 +69,15 @@
         content: attr(value) '♦';
     }
 }
+
+.joker {
+    color: green;
+
+    &:before {
+        content: attr(value) '🤡';
+    }
+}
+
 
 .value1 {
     &:after {

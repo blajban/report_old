@@ -11,10 +11,9 @@ Börja med att utveckla dina klasser och testa dem i webbsidor enligt följande.
     * kort (card) 
     * och kortlek (deck). 
 
-***** TODO *******
-FIXA SESSION OCH ORDNA ROUTESEN
     
 [OK] Skapa en sida card/deck som visar samtliga kort i kortleken sorterade per färg och värde. Ess kan vara antingen 1 eller 14 beroende av vilket kortspel man spelar.
+    * GÖR EVENTUELLT OM HÄR SÅ ATT DEN ÄR RÄTT SORTERAD
 
 [OK] Skapa en sida card/deck/shuffle som visar samtliga kort i kortleken när den har blandats.
 
@@ -24,12 +23,10 @@ FIXA SESSION OCH ORDNA ROUTESEN
 
 [OK] Kortleken skall sparas i sessionen så om man anropar sidorna draw och draw/:number så skall hela tiden antalet kort från korleken minskas tills kortleken är slut. När man gör card/deck/shuffle så kan kortleken återställas.
 
-* Skapa en sida card/deck/deal/:players/:cards som delar ut ett antal :cards från kortleken till ett antal :players och visar upp de korten som respektive spelare har fått. Visa även antalet kort som är kvar i kortleken. Här kan det vara bra att skapa klasser för player och cardHand eller liknande.
-    * CSS-regel för player1, player 2 etc
-    * Jobba vidare med cardhand och player
+[OK] Skapa en sida card/deck/deal/:players/:cards som delar ut ett antal :cards från kortleken till ett antal :players och visar upp de korten som respektive spelare har fått. Visa även antalet kort som är kvar i kortleken. Här kan det vara bra att skapa klasser för player och cardHand eller liknande.
 
 
-* Skapa en sida card/deck2 som är en kortlek inklusive 2 jokrar. Visa kortleken på samma sätt som sidan card/deck. Här kan det troligen vara lämpligt med någon form av arv när du bygger koden. Försök återanvända Deck och bygg förslagsvis DeckWith2Jokers extends Deck.
+[OK] Skapa en sida card/deck2 som är en kortlek inklusive 2 jokrar. Visa kortleken på samma sätt som sidan card/deck. Här kan det troligen vara lämpligt med någon form av arv när du bygger koden. Försök återanvända Deck och bygg förslagsvis DeckWith2Jokers extends Deck.
 
 Optionellt krav.
 ----------------------

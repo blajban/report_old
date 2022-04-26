@@ -6,14 +6,7 @@
 <body>
     {% include 'incl/nav.html.twig' %}
 
-    <nav class="sub-nav">
-        <a href="{{ relative_path('/card') }}">card</a>
-        <a href="{{ relative_path('/card/deck') }}">deck</a>
-        <a href="{{ relative_path('/card/deck/shuffle') }}">shuffled</a>
-        <a href="{{ relative_path('/card/deck/draw') }}">draw</a>
-        <a href="{{ relative_path('/card/deck/draw/5') }}">draw 5</a>
-        <a href="{{ relative_path('/card/deck/draw/10') }}">draw 10</a>
-    </nav>
+    {% include 'incl/card-nav.html.twig' %}
 
     <div class="content-area">
         <div class="content">
@@ -43,11 +36,7 @@
                 
             {% endif %}
 
-            {% if dealt_cards is defined %}
-                <div class="card back">{{ remaining_cards }}</div>
 
-                
-            {% endif %}
 
             
 
