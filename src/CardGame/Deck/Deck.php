@@ -23,11 +23,17 @@ class Deck implements DeckInterface
 
     public function __construct()
     {
-        for ($i = 1; $i < 14; $i++) {
-            $this->deck[] = new Card($i, Card::HEARTS);
-            $this->deck[] = new Card($i, Card::TILES);
-            $this->deck[] = new Card($i, Card::SPADES);
-            $this->deck[] = new Card($i, Card::CLUBS);
+        $this->addCardsToDeck(Card::HEARTS);
+        $this->addCardsToDeck(Card::TILES);
+        $this->addCardsToDeck(Card::SPADES);
+        $this->addCardsToDeck(Card::CLUBS);
+    }
+
+    private function addCardsToDeck(int $color) 
+    {
+        $maxEachColor = 14;
+        for ($i = 1; $i < $maxEachColor; $i++) {
+            $this->deck[] = new Card($i, $color);
         }
     }
 

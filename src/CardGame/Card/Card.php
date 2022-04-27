@@ -74,10 +74,21 @@ class Card implements FrenchEnglishCardInterface, JokerInterface
 
     public function asString(): string
     {
+        
         if ($this->isJoker()) {
-            return "{Card::COLORNAMES[Card::JOKER]} {Card::CARDNAMES[Card::JOKER]} ({$this->value} poäng)";
+            $color = Card::COLORNAMES[Card::JOKER];
+            $name = Card::CARDNAMES[Card::JOKER];
+            return "{$color} {$name} ({$this->value} poäng)";
         }
-        return "{Card::COLORNAMES[$this->color]} {Card::CARDNAMES[$this->value]} ({$this->value} poäng)";
+
+        $color = Card::COLORNAMES[$this->color];
+        $name = Card::CARDNAMES[$this->value];
+
+        if ($this->isAce()) {
+            return "{$color} {$name} ({$this->value}/14 poäng)";
+        }
+
+        return "{$color} {$name} ({$this->value} poäng)";
     }
 
     public function isAce(): bool

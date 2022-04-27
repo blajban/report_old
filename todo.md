@@ -7,12 +7,12 @@ Börja med att utveckla dina klasser och testa dem i webbsidor enligt följande.
 
 [OK] Gör en förstasida card som länkar till samtliga undersidor för denna uppgiften. Detta är din “landningssida” för denna uppgiften. Placera länken till sidan i din navbar så den är lätt att nå.
 
-* Skapa klasser för att hantera 
-    * kort (card) 
-    * och kortlek (deck). 
+[OK] Skapa klasser för att hantera 
+    [OK] kort (card) 
+    [OK] och kortlek (deck). 
 
     
-[OK] Skapa en sida card/deck som visar samtliga kort i kortleken sorterade per färg och värde. Ess kan vara antingen 1 eller 14 beroende av vilket kortspel man spelar.
+* Skapa en sida card/deck som visar samtliga kort i kortleken sorterade per färg och värde. Ess kan vara antingen 1 eller 14 beroende av vilket kortspel man spelar.
     * GÖR EVENTUELLT OM HÄR SÅ ATT DEN ÄR RÄTT SORTERAD
 
 [OK] Skapa en sida card/deck/shuffle som visar samtliga kort i kortleken när den har blandats.
@@ -31,18 +31,18 @@ Börja med att utveckla dina klasser och testa dem i webbsidor enligt följande.
 Optionellt krav.
 ----------------------
 
-[OK] Fundera på om du kan använda konstruktionen “interface” för att bygga din kod förberedd för återanvändning. Tänk att din kod jobbar mot ett interface DeckInterface istället för en hård implementation av Deck alternativt DeckWith2Jokers. Se om du kan uppdatera din kod och dina sidor så applikationen blir mer flexibel för implementationen av själva kortleken. Spelaren, korthanden, och utdelningen av korten samt blandningen bör ju inte behöva bry sig om vilka kort som ligger i kortleken.
+*[OK]* Fundera på om du kan använda konstruktionen “interface” för att bygga din kod förberedd för återanvändning. Tänk att din kod jobbar mot ett interface DeckInterface istället för en hård implementation av Deck alternativt DeckWith2Jokers. Se om du kan uppdatera din kod och dina sidor så applikationen blir mer flexibel för implementationen av själva kortleken. Spelaren, korthanden, och utdelningen av korten samt blandningen bör ju inte behöva bry sig om vilka kort som ligger i kortleken.
 
 Bygg JSON API
 ---------------
 
 Börja med att utveckla dina klasser och testa dem i webbsidor enligt följande.
 
-* Skapa en kontroller i Symfony där du kan skapa ett JSON API för denna delen av uppgiften.
+[OK] Skapa en kontroller i Symfony där du kan skapa ett JSON API för denna delen av uppgiften.
 
-* I din landningssida för card/ fortsätter du att länka till alla JSON routes som finns i denna delen av uppgiften.
+[OK] I din landningssida för card/ fortsätter du att länka till alla JSON routes som finns i denna delen av uppgiften.
 
-* Skapa en route GET card/api/deck som returnerar en JSON struktur med hela kortleken sorterad per färg och värde.
+[OK] Skapa en route GET card/api/deck som returnerar en JSON struktur med hela kortleken sorterad per färg och värde.
 
 Optionella
 -------------
