@@ -85,7 +85,11 @@ class Card implements FrenchEnglishCardInterface, JokerInterface
         $name = Card::CARDNAMES[$this->value];
 
         if ($this->isAce()) {
-            return "{$color} {$name} ({$this->value}/14 poäng)";
+            $otherValue = 14;
+            if ($this->value === $otherValue) {
+                $otherValue = 1;
+            }
+            return "{$color} {$name} ({$this->value}/{$otherValue} poäng)";
         }
 
         return "{$color} {$name} ({$this->value} poäng)";
