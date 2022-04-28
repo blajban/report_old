@@ -56,10 +56,35 @@ Följande 3 krav är optionella. Gör dem om du känner att du har tid. Det är 
 Publicera
 -------------
 
-* Committa alla filer och lägg till en tagg 2.0.0. Om du gör uppdateringar så ökar du taggen till 2.0.1, 2.0.2, 2.1.0 eller liknande.
+[OK] Committa alla filer och lägg till en tagg 2.0.0. Om du gör uppdateringar så ökar du taggen till 2.0.1, 2.0.2, 2.1.0 eller liknande.
 
-* Kör dbwebb test kmom02 för att kolla att du inte har några fel.
+[OK] Kör dbwebb test kmom02 för att kolla att du inte har några fel.
 
-* Pusha upp repot till GitHub, inklusive taggarna.
+[OK] Pusha upp repot till GitHub, inklusive taggarna.
+
+* Redovisningstext
 
 * Gör en dbwebb publishpure report och kontrollera att att det fungerar på studentservern.
+
+
+Redovisning
+=============
+
+
+    Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP.
+
+    Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden och dina klasser?
+        undera på om du kan använda konstruktionen “interface” för att bygga din kod förberedd för återanvändning.
+
+    Berätta hur det kändes att modellera ett kortspel med flödesdiagram och psuedokod. Var det något som du tror stödjer dig i din problemlösning och tankearbete för att strukturera koden kring en applikation?
+
+    Vilken är din TIL för detta kmom?
+
+
+Jag är relativt nöjd med hur det blev, försökte också utforska interface och traits i min kod.
+
+Card-klassen implementerar ett interface som förutom funktioner också innehåller ett antal konstanter, till exempel css-klasser och namn på färgerna. Jag har också några konstanter till färgerna så man slipper ange färgerna med strängar när man skapar kortet. Konstanterna gör också att de direkt kan mappas in i const-arrayerna med namn vilket funkar mycket bra. 
+
+Man kan fundera på vilken nytta det första interfacet gjorde i form av återanvändbar kod, men om vi går vidare till Deck-klassen som implementerar ett deck-interface ser jag verkligen nyttan. Deck-interfacet skulle ju kunna användas även till andra typer av lekar, en magic-lek eller pokemon-lek eller vad som helst. Själva funktionaliteten eller koden i både card och deck är relativt simpel. 
+
+För joker-leken gjorde jag ett arv och la helt enkelt till joker-korten i konstruktorn. För Player använde jag ett cardhand-interface och ett trait med implementationerna av cardhand-interfacet. Denna lösning kändes också väldigt bra, jag ser framför mig att Player-klassen skulle kunna implementera fler interfaces. Till exempel lade jag till spelarnamn i klassen, och där hade man såklart kunna tänka sig ett playerinfo-interface exempelvis. Controllern och att skicka data till template-filerna fungerade också bra.

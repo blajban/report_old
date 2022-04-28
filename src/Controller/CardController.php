@@ -32,7 +32,7 @@ class CardController extends AbstractController
         $deck = new Deck();
 
         return $this->render('card.html.twig', [
-            'title' => "Card",
+            'title' => "Deck",
             'displayed_deck' => $deck->getDeck()
         ]);
     }
@@ -40,7 +40,7 @@ class CardController extends AbstractController
     /**
      * @Route("/card/deck/shuffle")
      */
-    public function shuffled(SessionInterface $session): Response
+    public function shuffle(SessionInterface $session): Response
     {
         $deck = new Deck();
 
@@ -50,7 +50,7 @@ class CardController extends AbstractController
         
 
         return $this->render('card.html.twig', [
-            'title' => "Card",
+            'title' => "Shuffle",
             'displayed_deck' => $deck->getDeck()
         ]);
     }
@@ -72,7 +72,7 @@ class CardController extends AbstractController
         $session->set("deck", $deck);
 
         return $this->render('card.html.twig', [
-            'title' => "Card",
+            'title' => "Draw",
             'deck' => $deck->getDeck(),
             'drawn_card' => $cardDrawn,
             'remaining_cards' => $deck->remainingCards()
@@ -100,7 +100,7 @@ class CardController extends AbstractController
         $session->set("deck", $deck);
 
         return $this->render('card.html.twig', [
-            'title' => "Card",
+            'title' => "Draw many",
             'deck' => $deck->getDeck(),
             'drawn_cards' => $cardsDrawn,
             'remaining_cards' => $deck->remainingCards()
@@ -130,7 +130,7 @@ class CardController extends AbstractController
         $session->set("deck", $deck);
 
         return $this->render('table.html.twig', [
-            'title' => "Card",
+            'title' => "Deal",
             'remaining_cards' => $deck->remainingCards(),
             'players' => $activePlayers
         ]);
@@ -144,7 +144,7 @@ class CardController extends AbstractController
         $deck = new DeckWithJokers(2);
 
         return $this->render('card.html.twig', [
-            'title' => "Card",
+            'title' => "Deck 2",
             'displayed_deck' => $deck->getDeck()
         ]);
     }
